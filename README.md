@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 投資ノート
 
-Things you may want to cover:
+投資先として検討している銘柄の情報を集約するためのアプリ。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## サービス対象者
+投資をしていて、銘柄の管理・考察を行いたい人
