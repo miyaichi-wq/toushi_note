@@ -22,6 +22,11 @@ module ToushiNote
     config.generators do |g|
       g.assets false
       g.helper false
+      g.test_framework :rspec,
+        controller_specs: false,
+        view_specs: false,
+        routing_specs: false,
+        helper_specs: false
     end
   end
 end
