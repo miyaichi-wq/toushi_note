@@ -1,0 +1,11 @@
+<div class="navbar navbar-nav bg-light">
+  <div class="coutainer-fluid">
+    <span class="navbar-brand">投資アプリ</span>
+    <ul class="navba-nav">
+      <% if user_signed_in? %>
+        <li class="nav-item"><%= current_user.username %>
+        <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
