@@ -1,16 +1,19 @@
-<h1>104NOTE</h1>
+<div class="row text-center">
+  <div class="offset-3 col-6">
+    <h1 class="my-5">104NOTE</h1>
 
-<div>あなたの保有する資産の情報を一元管理して、資産形成に役立てましょう！</div>
-<div class="card">
-  <div class="card-body">
-    <div class="mb-3">
-      <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-primary' %>
-    </div>
+    <div class="mb-5">あなたの保有する資産の情報を一元管理して、資産形成に役立てましょう！</div>
 
-    <p>まだ登録していない方は
+    <div>
+      登録済みの方は
+      <div class="my-3">
+        <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-primary' %>
+      </div>
 
-    <div class="mb-3">
-      <%= link_to '新規登録', new_user_registration_path, class: 'btn btn-success' %>
+      まだ登録していない方は
+      <div class="my-3">
+        <%= link_to '新規登録', new_user_registration_path, class: 'btn btn-success' %>
+      </div>
     </div>
   </div>
 </div>
