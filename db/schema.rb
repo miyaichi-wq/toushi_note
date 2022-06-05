@@ -16,11 +16,13 @@ ActiveRecord::Schema.define(version: 2022_06_05_130527) do
   enable_extension "plpgsql"
 
   create_table "prices", force: :cascade do |t|
+    t.bigint "stock_id"
     t.date "date", null: false
     t.float "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["date"], name: "index_prices_on_date"
+    t.index ["stock_id"], name: "index_prices_on_stock_id"
   end
 
   create_table "stocks", force: :cascade do |t|
@@ -51,4 +53,5 @@ ActiveRecord::Schema.define(version: 2022_06_05_130527) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "prices", "stocks"
 end
