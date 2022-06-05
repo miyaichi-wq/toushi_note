@@ -13,4 +13,5 @@
 #  index_prices_on_date  (date)
 #
 class Price < ApplicationRecord
+  belongs_to :stock
 end
