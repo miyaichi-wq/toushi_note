@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_01_142612) do
+ActiveRecord::Schema.define(version: 2022_06_05_130527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "prices", force: :cascade do |t|
+    t.date "date", null: false
+    t.float "price", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["date"], name: "index_prices_on_date"
+  end
 
   create_table "stocks", force: :cascade do |t|
     t.integer "category", null: false
