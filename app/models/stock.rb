@@ -18,6 +18,8 @@
 #
 class Stock < ApplicationRecord
   has_many :prices, dependent: :destroy
+  has_many :user_stocks
+  has_many :users, through: :user_stocks
 
   validates :category, presence: true
   validates :code, presence: true, uniqueness: true
