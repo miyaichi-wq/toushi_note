@@ -3,4 +3,6 @@ Rails.application.routes.draw do
              controllers: { registrations: 'users/registrations' }
 
   root 'static_pages#top'
+
+  resources :user_stocks
 end
