@@ -1,0 +1,29 @@
+<div class="modal fade" id="userStockModal" tabindex="-1" aria-labelledby="userStockModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="userStockModalLabel">新規登録</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <%= form_with model: current_user.user_stocks.build do |f| %>
+        <div class="modal-body">
+          <div class="form-group mb-3">
+            <%= f.label :stock_id %>
+            <%= f.text_field :stock_id %>
+          </div>
+          <div class="form-group mb-3">
+            <%= f.label :price %>
+            <%= f.number_field :price, class: 'form-control' %>
+          </div>
+          <div class="form-group mb-3">
+            <%= f.label :volume %>
+            <%= f.number_field :volume, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

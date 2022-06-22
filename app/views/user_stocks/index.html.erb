@@ -1,5 +1,11 @@
 <h1>保有銘柄一覧</h1>
 
+<div class="d-flex justify-content-end">
+  <button type="button" class="btn btn-danger mb-3" data-bs-toggle="modal" data-bs-target="#userStockModal">新規登録</button>
+</div>
+
+<%= render 'modal_form' %>
+
 <div class="card shadow-sm">
   <div class="card-body">
     検索バー・並び替えバー

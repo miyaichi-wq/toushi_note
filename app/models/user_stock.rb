@@ -24,4 +24,7 @@
 class UserStock < ApplicationRecord
   belongs_to :user
   belongs_to :stock
+
+  validates :price, presence: true
+  validates :volume, presence: true
 end
