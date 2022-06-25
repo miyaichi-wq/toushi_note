@@ -11,7 +11,10 @@ class UserStocksController < ApplicationController
 
   def create
     @user_stock = current_user.user_stocks.build(user_stock_params)
-    @user_stock.save
+    
+    if @user_stock.save
+      redirect_to user_stocks_path
+    end
   end
 
   def show
