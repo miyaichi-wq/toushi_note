@@ -23,6 +23,12 @@ class UserStocksController < ApplicationController
   def edit
   end
 
+  def destroy
+    @user_stock = current_user.user_stocks.find(params[:id])
+    @user_stock.destroy!
+    redirect_to user_stocks_path
+  end
+
   private
 
   def user_stock_params
