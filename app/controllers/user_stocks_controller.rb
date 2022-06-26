@@ -3,6 +3,7 @@ class UserStocksController < ApplicationController
 
   def index
     @user_stocks = current_user.user_stocks.all
+    @stocks = Stock.all.map { |stock| [stock.code + ':' + stock.name, stock.id] }
   end
 
   def new

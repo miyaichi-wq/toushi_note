@@ -9,7 +9,7 @@
         <div class="modal-body">
           <div class="form-group mb-3">
             <%= f.label :stock_id %>
-            <%= f.text_field :stock_id %>
+            <%= f.select :stock_id, @stocks, { include_blank: '選択してください' }, class: 'form-control' %>
           </div>
           <div class="form-group mb-3">
             <%= f.label :price %>
