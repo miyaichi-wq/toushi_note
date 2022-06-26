@@ -27,4 +27,5 @@ class UserStock < ApplicationRecord
 
   validates :price, presence: true
   validates :volume, presence: true
+  validates :user_id, uniqueness: { scope: :stock_id }
 end
