@@ -13,7 +13,9 @@ class UserStocksController < ApplicationController
     @user_stock = current_user.user_stocks.build(user_stock_params)
     
     if @user_stock.save
-      redirect_to user_stocks_path
+      redirect_to user_stocks_path, notice: "「#{@user_stock.stock.name}」を登録しました。"
+    else
+      redirect_to user_stocks_path, alert: '登録に失敗しました。'
     end
   end
 
@@ -26,7 +28,7 @@ class UserStocksController < ApplicationController
   def destroy
     @user_stock = current_user.user_stocks.find(params[:id])
     @user_stock.destroy!
-    redirect_to user_stocks_path
+    redirect_to user_stocks_path, notice: "「#{@user_stock.stock.name}」を削除しました。"
   end
 
   private
