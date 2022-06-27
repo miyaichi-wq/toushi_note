@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      user_stock:
+        stock_id: 銘柄
+        price: 購入価格
+        volume: 数量

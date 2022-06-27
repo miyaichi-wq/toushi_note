@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_18_122913) do
+ActiveRecord::Schema.define(version: 2022_06_07_144557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "prices", force: :cascade do |t|
+    t.bigint "stock_id"
+    t.date "date", null: false
+    t.float "price", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["date"], name: "index_prices_on_date"
+    t.index ["stock_id"], name: "index_prices_on_stock_id"
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.integer "category", null: false
+    t.string "code", null: false
+    t.string "name", null: false
+    t.string "url"
+    t.text "description"
+    t.string "sector"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_stocks_on_code", unique: true
+  end
+
+  create_table "user_stocks", force: :cascade do |t|
+    t.integer "volume", null: false
+    t.float "price", null: false
+    t.bigint "user_id", null: false
+    t.bigint "stock_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["stock_id"], name: "index_user_stocks_on_stock_id"
+    t.index ["user_id", "stock_id"], name: "index_user_stocks_on_user_id_and_stock_id", unique: true
+    t.index ["user_id"], name: "index_user_stocks_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
@@ -31,4 +65,7 @@ ActiveRecord::Schema.define(version: 2022_05_18_122913) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "prices", "stocks"
+  add_foreign_key "user_stocks", "stocks"
+  add_foreign_key "user_stocks", "users"
 end

@@ -1,0 +1,29 @@
+<div class="modal fade" id="edit-article-modal" tabindex="-1" aria-labelledby="edit-article-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="edit-article-modal-label">編集</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <%= form_with model: @user_stock do |f| %>
+        <div class="modal-body">
+          <div class="form-group mb-3">
+            <%= f.label :stock_id %>
+            <%= f.select :stock_id, @stocks, { include_blank: '選択してください' }, class: 'form-control' %>
+          </div>
+          <div class="form-group mb-3">
+            <%= f.label :price %>
+            <%= f.number_field :price, class: 'form-control' %>
+          </div>
+          <div class="form-group mb-3">
+            <%= f.label :volume %>
+            <%= f.number_field :volume, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

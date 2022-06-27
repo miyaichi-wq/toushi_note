@@ -1,0 +1,36 @@
+<h1>保有銘柄一覧</h1>
+
+<div class="d-flex justify-content-end">
+  <%= link_to '新規登録', new_user_stock_path, remote: true, class: 'btn btn-primary mb-3' %>
+</div>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    検索バー・並び替えバー
+    <div class="card my-3">
+      <div class="card-body">
+        <div class="row text-center">
+          <div class="col-md-3">
+            銘柄名
+          </div>
+          <div class="col-md-2">
+            取得価格<br>
+            保有数量
+          </div>
+          <div class="col-md-2">
+            現在価格(前日比)
+          </div>
+          <div class="col-md-3">
+            現在総額(騰落率)
+          </div>
+        </div>
+      </div>
+    </div>  
+
+    <% if @user_stocks.any? %>
+      <%= render @user_stocks %>
+    <% else %>
+      保有銘柄がありません
+    <% end %>
+  </div>
+</div>
