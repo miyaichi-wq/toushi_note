@@ -1,10 +1,8 @@
 <h1>保有銘柄一覧</h1>
 
 <div class="d-flex justify-content-end">
-  <button type="button" class="btn btn-danger mb-3" data-bs-toggle="modal" data-bs-target="#userStockModal">新規登録</button>
+  <%= link_to '新規登録', new_user_stock_path, remote: true, class: 'btn btn-primary mb-3' %>
 </div>
-
-<%= render 'modal_form' %>
 
 <div class="card shadow-sm">
   <div class="card-body">
@@ -15,11 +13,11 @@
           <div class="col-md-3">
             銘柄名
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             取得価格<br>
             保有数量
           </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             現在価格(前日比)
           </div>
           <div class="col-md-3">

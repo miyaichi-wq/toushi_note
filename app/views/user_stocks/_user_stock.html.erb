@@ -4,17 +4,18 @@
         <div class="col-md-3">
           <%= user_stock.stock.name %>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
           <%= user_stock.price %><br>
           <%= user_stock.volume %>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
           15.0
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
           <%= user_stock.volume * 15.0 %>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-2">
+          <%= link_to '編集', edit_user_stock_path(user_stock), remote: true, class: 'btn btn-info me-3' %>
           <%= link_to '削除', user_stock, method: :delete, data: { confirm: "#{user_stock.stock.name}を削除しますか？" }, class: 'btn btn-danger' %>
         </div>
     </div>
