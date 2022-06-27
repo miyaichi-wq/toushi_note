@@ -14,7 +14,7 @@
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <li><%= link_to 'ダッシュボード', '#', class: "dropdown-item" %></li>
               <li><%= link_to 'マイページ', '#', class: "dropdown-item" %></li>
-              <li><%= link_to '保有銘柄登録', '#', class: "dropdown-item" %></li>
+              <li><%= link_to '保有銘柄登録', new_user_stock_path, remote: true, class: "dropdown-item" %></li>
               <li><%= link_to '研究ページ登録', '#', class: "dropdown-item" %></li>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
