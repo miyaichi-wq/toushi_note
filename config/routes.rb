@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   root 'static_pages#top'
 
+  get 'dashboard', to: 'dashboard#index'
   resources :user_stocks
 end
