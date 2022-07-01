@@ -1,6 +1,4 @@
 class UserStocksController < ApplicationController
-  before_action :authenticate_user!
-
   def index
     @user_stocks = current_user.user_stocks.all
   end
